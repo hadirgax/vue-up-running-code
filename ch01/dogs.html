@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+    <div id="app">
+      <p>The second dog is {{ dogs[1] }}</p>
+      <p>All the dogs are {{ dogs }}</p>
+      <h1>List of dogs</h1>
+      <ul>
+        <li v-for="dog in dogs">{{ dog }}</li>
+      </ul>
+      <h1>Average Rents</h1>
+      <ul>
+        <li v-for="(rent, city) in averageRent">
+          The average rent in {{city}} is ${{rent}}
+        </li>
+      </ul>
+      <h1>Numbers from 1 to 10</h1>
+      <ul>
+        <li v-for="n in 10">{{ n }}</li>
+      </ul>
+    </div>
+
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          dogs: ["Rex", "Rover", "Henrietta", "Alan"],
+          averageRent: {
+            london: 1650,
+            paris: 1730,
+            NYC: 3680,
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
